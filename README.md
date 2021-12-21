@@ -1,17 +1,9 @@
 # flatpackage
 
 
-The flatpackage package is an R package that provides the ability to 
-create an easily offline installable version of a package that includes
-all the relevant dependencies.  When on a system with no outside internet access
-it can be difficult to install R packages.  You need to download the packages 
-required somewhere else, possibly have them audited, and install locally.  
-If you don't also download the dependencies for a package it can be slightly 
-annoying to find that you need to go through the entire process again.
+The flatpackage package is an R package that provides the ability to create an easily offline installable version of a package that includes all the relevant dependencies.  When on a system with no outside internet access it can be difficult to install R packages.  You need to download the packages required somewhere else, possibly have them audited, and install locally. If you don't also download the dependencies for a package it can be slightly annoying to find that you need to go through the entire process again.
 
-This package intends on making that process a bit easier by zipping everything
-up that you need and providing some convenience functions to install the result
-so you don't have to go through the dependency ladder directly.
+This package intends on making that process a bit easier by zipping everything up that you need and providing some convenience functions to install the result so you don't have to go through the dependency ladder directly.
 
 ## Examples
 
@@ -27,9 +19,7 @@ flatpackage_create("docstring")
 ## TODO
 
  - Create the installation script and provide instructions on how to install
- - Make it cross platform/version.  Currently this assumes you're running on 
- the same version and same platform as the system you're creating the
- flatpackage on.
+ - Make it cross platform/version.  Currently this assumes you're running on  the same version and same platform as the system you're creating the flatpackage on.
 
 
 ## Known Issues
