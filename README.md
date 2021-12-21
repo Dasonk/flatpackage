@@ -19,6 +19,7 @@ so you don't have to go through the dependency ladder directly.
 ```r
 library(flatpackage)
 
+# Definitely install docstring - what a great package
 flatpackage_create("docstring")
 
 ```
