@@ -1,7 +1,7 @@
 Package: flatpackage
 Type: Package
 Title: Create flatpackages from existing packages
-Version: 1.0.0
+Version: 0.0.1
 Date: 2021-12-21
 Authors@R: c(person("Dason", "Kurkiewicz", email = "dasonk@gmail.com", role = c("aut", "cre")))
 Author: Dason Kurkiewicz [aut, cre]
