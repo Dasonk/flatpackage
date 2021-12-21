@@ -1,16 +1,16 @@
 Package: flatpackage
 Type: Package
-Title: Provides a simple way to create an easily offline installable version of packages
-    including their dependencies.  
+Title: Create flatpackages from existing packages
 Version: 1.0.0
 Date: 2021-12-21
 Authors@R: c(person("Dason", "Kurkiewicz", email = "dasonk@gmail.com", role = c("aut", "cre")))
 Author: Dason Kurkiewicz [aut, cre]
 Maintainer: Dason Kurkiewicz <dasonk@gmail.com>
-Imports: 
-Suggests: 
+Imports: tools, utils
+Suggests: knitr
 BugReports: https://github.com/dasonk/flatpackage/issues?state=open
-Description: 
+Description: Provides a simple way to create an easily offline installable version of packages
+    including their dependencies.  
 License: MIT
 URL: https://github.com/dasonk/flatpackage
 RoxygenNote: 7.1.2
