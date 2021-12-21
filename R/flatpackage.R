@@ -22,25 +22,30 @@ flatpackage_create <- function(package, includeSuggests = TRUE){
     # TODO - Consider making this more flexible?
     whichoption <- ifelse(includeSuggests, "all", "strong")
     
-    packages_to_download <- package_dependencies(package, which = whichoption)
+    # base packages to not include in download list
+    do_not_include <- dir(file.path(Sys.getenv("R_HOME"), "library"))
+    # TODO - Remove base packages so we don't get the errors upon trying to
+    # download
+    packages_to_download <- tools::package_dependencies(package, which = whichoption)
     # If this is ever expanded to allow for multiple packages to be included
     # this might need to be modified. Or maybe not. We'll see.
     packages_to_download <- c(package, unlist(unname(packages_to_download)))
-    
+    # Remove base packages
+    packages_to_download <- setdiff(packages_to_download, do_not_include)
     tmpd <- tempdir()
     package_directory <- file.path(tmpd, package)
     dir.create(package_directory)
     
     # had some issues with just using download.packages on the vector
     for(pack in packages_to_download){
-        download.packages(pack, destdir = package_directory)
+        utils::download.packages(pack, destdir = package_directory)
     }
     
     zipname <- paste0(package, ".zip")
     
     # TODO - Create the R script to install the files after unzipped
     
-    zip(zipname, files = list.files(package_directory, full.names = TRUE))
+    utils::zip(zipname, files = list.files(package_directory, full.names = TRUE))
     
     return(zipname)
     
